@@ -1,6 +1,6 @@
 <template>
   <div id="listing">
-    <v-container inner fluid grid-list-xs class="blue lighten-5">
+    <v-container fluid grid-list-xs class="mainForm_style2 blue lighten-5">
         <mainForm></mainForm>
         <breadcrumb :data="breadcrumb"></breadcrumb>
     </v-container>       
@@ -136,7 +136,7 @@
                 this.isHotel = true
                 this.hotelExclude = this.$route.query.id
                   axios.get('http://localhost:8080/front?mod=hotel&hotel_id='+ this.$route.query.id).then(response => {
-                      console.log('---HOTE')
+                      // console.log('---HOTE')
                       // console.log(response.data)
                       this.hotel = response.data
                       this.hotelStar = this.hotel.Star_rating
@@ -147,7 +147,7 @@
                       if(this.hotel.Photo4 == ""){ this.hotel.Photo4 = this.hotel.Photo1 }
 
                       this.hotelLoading = false
-                      console.log(this.hotel)
+                      // console.log(this.hotel)
                   })                
             }
             this.windowWidth = window.innerWidth
@@ -160,44 +160,5 @@
 <style type="text/css">
   i.icon{
     cursor: pointer;
-  }
-  #listing .inner{
-    padding: 75px 3% 0;
-  }
-  #listing #mainForm .input_wrapper{
-    background-color: white;
-    border: 1px solid #666;
-    border-right: none;
-    position: relative;
-    z-index: 2;
-  }
-  #listing #mainForm button{
-    z-index: 3;
-  }
-  #listing #mainForm .input.half{
-    border-left: none!important;
-  }
-  #listing #mainForm #autocompleteResult{
-    border: 1px solid #666!important;
-    border-top: none!important;
-  }
-  @media only screen and (max-width: 1023px) {
-    #listing #mainForm .input_wrapper{
-      border: 1px solid #666!important;
-    }
-      #listing #mainForm .input_wrapper.half:nth-child(1){
-        border-right: none!important;
-      }  
-  }
-  @media only screen and (max-width: 599px) {
-    #listing #mainForm .input_wrapper,
-    #listing #mainForm .input_wrapper.half:nth-child(1){
-      border: 1px solid #666!important;
-    } 
-  }
-  @media only screen and (max-width: 320px){
-    #listing .inner{
-      padding: 75px 2% 10px;
-    }  
   }
 </style>

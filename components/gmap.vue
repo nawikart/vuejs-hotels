@@ -12,7 +12,16 @@
           </v-btn>
         </v-toolbar>
 
-          <div id="map" style="width: 100%; height: 100vh;">{{ mapData }}</div>
+          <div id="map" style="width: 100%; height: calc(100vh - 70px);">
+              
+              <!-- {{ mapData }} -->
+
+              <iframe src="http://localhost:8080/gmap" 
+                      allowTransparency="true" 
+                      style="background-color:lightgreen;" 
+                      width="100%" height="100%">
+              </iframe>
+          </div>
       </v-card>
     </v-dialog> 	
 </template>

@@ -80,7 +80,6 @@ Still in maintenance, so please understand if there is some error here :-)</p>
       color="blue"
       dark
       right
-      timeout="1000"
       top
     >
       Sorry, still undercontruction :-)
@@ -157,5 +156,43 @@ Still in maintenance, so please understand if there is some error here :-)</p>
 
   #create .btn--floating {
     position: relative;
-  }   
+  }
+
+  .mainForm_style2 #mainForm{
+    padding: 75px 3% 0;
+    margin: auto;
+    width: 100%;
+    display: table;
+  }
+  .mainForm_style2 #mainForm .input_wrapper{
+    background-color: white;
+    border: 1px solid #666;
+    border-right: none;
+    position: relative;
+    /* z-index: 2; */
+  }
+  .mainForm_style2 #mainForm button{
+    z-index: 3;
+  }
+  .mainForm_style2 #mainForm .input.half{
+    border-left: none!important;
+  }
+  .mainForm_style2 #mainForm #autocompleteResult{
+    border: 1px solid #666!important;
+    border-top: none!important;
+  }
+  @media only screen and (max-width: 1023px) {
+    .mainForm_style2 #mainForm .input_wrapper{
+      border: 1px solid #666!important;
+    }
+      .mainForm_style2 #mainForm .input_wrapper.half:nth-child(1){
+        border-right: none!important;
+      }  
+  }
+  @media only screen and (max-width: 599px) {
+    .mainForm_style2 #mainForm .input_wrapper,
+    .mainForm_style2 #mainForm .input_wrapper.half:nth-child(1){
+      border: 1px solid #666!important;
+    } 
+  }  
 </style>

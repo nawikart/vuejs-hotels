@@ -1,9 +1,14 @@
 <template>
     <div id="hotel">
 
-        <mainParallax></mainParallax>
+        <!-- <mainParallax></mainParallax> -->
 
-        <div style="background-color: #f6f6f6;"><breadcrumb :data="breadcrumb"></breadcrumb></div>
+        <v-container fluid grid-list-xs class="mainForm_style2 blue lighten-5">
+            <mainForm></mainForm>
+            <breadcrumb :data="breadcrumb"></breadcrumb>
+        </v-container>
+        
+        <!-- <div style="background-color: #f6f6f6;"><breadcrumb :data="breadcrumb"></breadcrumb></div> -->
 
         <v-container grid-list-sm v-if="hotelLoader">
             <p>&nbsp;</p>
@@ -62,7 +67,7 @@
                         <stars :Star_rating="detail.Star_rating"></stars> &nbsp; &nbsp; (<b>{{ detail.Number_of_reviews }}</b> reviews)
                     </div>
                     <p class="body-1 address mt-2" align="center">
-                        <v-icon small>location_on</v-icon><span class="pt-2" style="margin-top: 9px; color: #777;">{{ detail.Addressline1 }}, {{ detail.City }}, {{ detail.Countryisocode }}</span> &nbsp; <a class="viewonmap blue--text" style="text-decoration: underline; font-size: 12px!important;" v-on:click="openMap">view on map</a></p>
+                        <v-icon small>location_on</v-icon><span class="pt-2" style="margin-top: 9px; color: #777;">{{ detail.Addressline1 }}, {{ detail.City }}, {{ detail.Countryisocode }}</span> &nbsp; <a class="viewonmap blue--text" style="text-decoration: underline; font-size: 12px!important; white-space: nowrap;" v-on:click="openMap">view on map</a></p>
                     <p class="subheading overview text-xs-center" v-if="overviewFull && detail.Overview != ''">{{ detail.Overview }} <a v-on:click="overviewFull = false">less</a></p>
                     <p class="subheading overview text-xs-center" v-if="!overviewFull && detail.Overview != ''">{{ detail.Excerpt }}... <a v-on:click="overviewFull = true">more</a></p>
 
@@ -160,7 +165,14 @@
                     </v-flex>
 
                     <v-flex xs12 sm5 md4 offset-sm1 banner>
-                        <div class="flex" style="background: url('/gallery/img-3.jpg') no-repeat; background-size: 100% 90vh;min-height: 300px;"></div>
+                        <div class="flex" style="min-height: 300px;">
+                            <p align="center" class="blue--text"><a class="viewonmap blue--text" style="text-decoration: underline; font-size: 12px!important;" v-on:click="openMap">click view full map</a></p>
+                            <iframe src="http://localhost:8080/gmap" 
+                                    allowTransparency="true" frameborder="0"
+                                    style="background-color:lightgreen;" 
+                                    width="100%" height="300">
+                            </iframe>                        
+                        </div>
                         <div class="flex mt-3" style="background: url('/gallery/img-3.jpg') no-repeat; background-size: 100% 90vh;min-height: 300px;"></div>
                     </v-flex>
                 </v-layout>

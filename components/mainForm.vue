@@ -46,7 +46,7 @@
                 </div>
 
                 <p align="center" class="row hidden-sm-and-up">
-                    <router-link to="/bali-id-hotels.html"><v-btn class="btnSearch" large dark color="blue" style="width: 90%;">Search</v-btn></router-link>
+                    <a :href="searchTo"><v-btn class="btnSearch" large dark color="blue" style="width: 90%;">Search</v-btn></a>
                 </p>
               </div>
 

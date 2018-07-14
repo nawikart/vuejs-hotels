@@ -238,7 +238,7 @@
   }
   #list .img .heart{
     position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
   }
   /*#list .img .price{
     position: absolute;
@@ -257,7 +257,7 @@
       bottom: 10px;
       width: 80px;
       text-align: center;
-      z-index: 1;
+      /* z-index: 1; */
   }
   #list .badge-price .discount-ribbon {
       background: #EE595D;
